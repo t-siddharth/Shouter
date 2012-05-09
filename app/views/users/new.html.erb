@@ -1,0 +1,17 @@
+<%= form_for(@user) do |user_form| %>
+	<% if @user.errors.any? %>
+	Could not sign you up because:
+	<ul>
+		<% @user.errors.full_messages.each do |message|%>
+		<li> <%= message %> </li>
+		<% end %>
+		</ul>
+		<% end %>
+	<%= user_form.email_field :email, placeholder: "you@example.com" %>
+	<%= user_form.submit%>
+<% end %>
+
+
+<% if @user.errors.any? %>
+	<p> Please enter an e-mail id to create your user profile <p>
+<% end %>

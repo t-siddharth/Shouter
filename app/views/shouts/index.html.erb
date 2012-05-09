@@ -1,0 +1,6 @@
+<% if signed_in? %>
+<%= render "form", shout: @shout %>
+<% end %>
+
+<%= render @shouts %>
+<%= will_paginate @shouts %>
